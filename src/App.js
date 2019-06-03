@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import Menu from './components/Menu/menu.js'
+import Header from './components/Header/header.js'
 
 export default class App extends Component {
   constructor (props) {
     super(props)
-    this.data = props.data
+    this.dataMenu = props.dataMenu
+    this.dataHeader = props.dataHeader
   }
 
   render () {
     return (
       <React.Fragment>
-        <Menu name={this.data.categories[0]} />
+        <Header dataMenu={this.dataMenu} dataHeader={this.dataHeader} />
       </React.Fragment>
     )
   }

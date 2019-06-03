@@ -1,0 +1,13 @@
+@import './variables.scss';
+
+@mixin respond-to($point) {
+  @if $point == medium-screens {
+    @media (min-width: $break-medium1) and (max-width: $break-medium2) {
+      @content;
+    }
+  } @else if $point == wide-screens {
+    @media (min-width: $break-large) {
+      @content;
+    }
+  }
+}
