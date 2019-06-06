@@ -4,7 +4,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlMinifierPlugin = require('html-minifier-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -25,7 +24,6 @@ module.exports = merge(common, {
       removeComments: true,
       caseSensitive: true,
       removeEmptyElements: true
-    }),
-    new CopyWebpackPlugin([{ from: './src/assets', to: 'assets/' }])
+    })
   ]
 })

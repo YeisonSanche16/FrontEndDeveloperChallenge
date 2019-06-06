@@ -5,11 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const autoprefixer = require('autoprefixer')
 const StyleLintPlugin = require('stylelint-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   devServer: {
     host: '0.0.0.0',
-    port: '3001',
+    port: '1312',
     open: true
   },
 
@@ -26,8 +27,6 @@ module.exports = {
 
   module: {
     rules: [
-      { test: /\.handlebars$/, loader: 'handlebars-loader' },
-
       {
         enforce: 'pre',
         test: /\.js$/,
@@ -117,6 +116,7 @@ module.exports = {
   },
 
   plugins: [
+    new CopyWebpackPlugin([{ from: './src/assets', to: 'assets/' }]),
     new webpack.LoaderOptionsPlugin({
       options: {
         handlebarsLoader: {}
