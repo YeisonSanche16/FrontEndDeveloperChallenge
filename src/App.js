@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header/header.js'
+import Menu from './components/Menu/Menu.js'
 
 export default class App extends Component {
   constructor (props) {
@@ -11,7 +12,8 @@ export default class App extends Component {
   render () {
     return (
       <React.Fragment>
-        <Header dataMenu={this.dataMenu} dataHeader={this.dataHeader} />
+        <Header dataHeader={this.dataHeader} />
+        <Menu dataMenu={this.dataMenu} />
       </React.Fragment>
     )
   }
